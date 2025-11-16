@@ -1,0 +1,33 @@
+name: SonarQube Analysis
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  sonarqube:
+    name: SonarQube Analysis
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        
+    - name: SonarQube Analysis
+      run: ci/sonar-scan.bat
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        
+    - name: Check Quality Gate
+      run: |
+        echo "📊 Verification Quality Gate..."
+        # Optionally add API verification
