@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Jean Dupont",
+        "email": "jean.dupont@email.com",
+        "phone": "01 23 45 67 89",
+        "address": "123 Avenue des Champs, Paris",
+        "created_at": "2024-01-15 10:30:00"
+    },
+    {
+        "id": 2,
+        "name": "Marie Martin",
+        "email": "marie.martin@email.com",
+        "phone": "06 12 34 56 78",
+        "address": "456 Rue de la République, Lyon",
+        "created_at": "2024-01-16 14:20:00"
+    }
+]
